@@ -47,11 +47,11 @@ export class UserCard extends Component {
   }
 
   render() {
-    const { user, loading } = this.state
+    const { user, loading, windowWidth } = this.state
     const { phone, email, name } = user
 
     return (
-      <Card>
+      <Card showImage={windowWidth > 700}>
         <UserInfo name={name} loading={loading} onRefresh={this.loadUser} />
         <UserContacts loading={loading} phone={phone} email={email} />
       </Card>

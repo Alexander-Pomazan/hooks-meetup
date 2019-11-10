@@ -8,7 +8,7 @@ SyntaxHighlighter.registerLanguage('jsx', jsx)
 
 export const CodeSnippet = ({ code }) => {
   return (
-    <SyntaxHighlighter showLineNumbers language="jsx" style={vs}>
+    <SyntaxHighlighter language="jsx" style={vs}>
       {code}
     </SyntaxHighlighter>
   )
