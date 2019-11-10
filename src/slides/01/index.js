@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import { Card, CardMedia, CardContent } from '@material-ui/core'
 
-import { UserInfo, UserContacts } from 'src/components'
+import { UserInfo, UserContacts, Card } from 'src/components'
 
 import { fetchUserProfileData } from 'src/utils'
-import cardBackground from 'src/assets/background.jpg'
 
 class UserCard extends Component {
   state = {
@@ -12,9 +10,7 @@ class UserCard extends Component {
     loading: true
   }
 
-  componentDidMount = () => {
-    this.loadUser()
-  }
+  componentDidMount = () => this.loadUser()
 
   loadUser = async () => {
     this.setState({ loading: true })
@@ -33,13 +29,10 @@ class UserCard extends Component {
     const { phone, email, name } = user
 
     return (
-      <Card elevation={12} style={{ height: 400, width: 300 }}>
-        <CardMedia style={{ height: 150 }} image={cardBackground} />
+      <Card>
         <UserInfo name={name} loading={loading} onRefresh={this.loadUser} />
 
-        <CardContent>
-          <UserContacts loading={loading} phone={phone} email={email} />
-        </CardContent>
+        <UserContacts loading={loading} phone={phone} email={email} />
       </Card>
     )
   }
