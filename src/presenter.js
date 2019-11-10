@@ -4,7 +4,7 @@ import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons'
 import { styled } from '@material-ui/styles'
 
 const ThiccLinearProgress = styled(LinearProgress)({
-  height: 20
+  height: 18
 })
 
 const isFirstSlide = slideNumber => slideNumber === 1
@@ -58,7 +58,7 @@ export const Presenter = ({ children }) => {
         {currentSlideComponent}
       </Box>
 
-      <Box position="absolute" left={4} top="50%">
+      <Box position="absolute" left={4} bottom={20}>
         <IconButton
           onClick={switchPrevSlide}
           disabled={isFirstSlide(currentSlideNumber)}
@@ -67,7 +67,7 @@ export const Presenter = ({ children }) => {
         </IconButton>
       </Box>
 
-      <Box position="absolute" right={4} top="50%">
+      <Box position="absolute" right={4} bottom={20}>
         <IconButton
           onClick={switchNextSlide}
           disabled={isLastSlide(currentSlideNumber, totallySlides)}
