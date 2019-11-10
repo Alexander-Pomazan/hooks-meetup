@@ -9,15 +9,13 @@ import {
 
 const theme = createMuiTheme()
 
-export const App = () => {
-  return (
-    <MuiThemeProvider theme={theme}>
-      <CssBaseline />
-      <Presenter>
-        <Slide01 />
-        <div>2</div>
-        <div>3</div>
-      </Presenter>
-    </MuiThemeProvider>
-  )
-}
+export const App = () => (
+  <MuiThemeProvider theme={theme}>
+    <CssBaseline />
+    <Presenter>
+      <Slide01 />
+      <div>2</div>
+      <div>3</div>
+    </Presenter>
+  </MuiThemeProvider>
+)

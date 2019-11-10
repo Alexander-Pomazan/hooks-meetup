@@ -11,8 +11,13 @@ const isFirstSlide = slideNumber => slideNumber === 1
 const isLastSlide = (slideNumber, totallySlides) =>
   slideNumber === totallySlides
 
+const initialSlideNumber =
+  parseInt(sessionStorage.getItem('currentSlideNumber'), 10) || 1
+
 export const Presenter = ({ children }) => {
-  const [currentSlideNumber, setCurrentSlideNumber] = useState(1)
+  const [currentSlideNumber, setCurrentSlideNumber] = useState(
+    initialSlideNumber
+  )
 
   const totallySlides = React.Children.count(children)
   const currentSlideComponent = useMemo(
@@ -26,13 +31,19 @@ export const Presenter = ({ children }) => {
   )
 
   const switchNextSlide = useCallback(
-    () => setCurrentSlideNumber(c => (isLastSlide(c) ? c : c + 1)),
-    []
+    () =>
+      setCurrentSlideNumber(c => (isLastSlide(c, totallySlides) ? c : c + 1)),
+    [totallySlides]
   )
 
   const switchPrevSlide = useCallback(
     () => setCurrentSlideNumber(c => (isFirstSlide(c) ? c : c - 1)),
     []
+  )
+
+  useEffect(
+    () => sessionStorage.setItem('currentSlideNumber', currentSlideNumber),
+    [currentSlideNumber]
   )
 
   useEffect(() => {
@@ -58,23 +69,21 @@ export const Presenter = ({ children }) => {
         {currentSlideComponent}
       </Box>
 
-      <Box position="absolute" left={4} bottom={20}>
-        <IconButton
-          onClick={switchPrevSlide}
-          disabled={isFirstSlide(currentSlideNumber)}
-        >
-          <KeyboardArrowLeft />
-        </IconButton>
-      </Box>
+      {!isFirstSlide(currentSlideNumber) && (
+        <Box position="absolute" left={4} bottom={20}>
+          <IconButton onClick={switchPrevSlide}>
+            <KeyboardArrowLeft />
+          </IconButton>
+        </Box>
+      )}
 
-      <Box position="absolute" right={4} bottom={20}>
-        <IconButton
-          onClick={switchNextSlide}
-          disabled={isLastSlide(currentSlideNumber, totallySlides)}
-        >
-          <KeyboardArrowRight />
-        </IconButton>
-      </Box>
+      {!isLastSlide(currentSlideNumber, totallySlides) && (
+        <Box position="absolute" right={4} bottom={20}>
+          <IconButton onClick={switchNextSlide}>
+            <KeyboardArrowRight />
+          </IconButton>
+        </Box>
+      )}
 
       <Box position="absolute" bottom={0} left={0} width="100%">
         <ThiccLinearProgress variant="determinate" value={currentProgress} />
