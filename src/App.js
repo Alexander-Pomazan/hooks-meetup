@@ -1,23 +1,13 @@
 import React from 'react'
 import { Presenter } from './presenter'
 import Slide01 from './slides/01'
-import { indigo, ping } from '@material-ui/core/colors'
 import {
   CssBaseline,
   createMuiTheme,
   MuiThemeProvider
 } from '@material-ui/core'
 
-const theme = createMuiTheme({
-  palette: {
-    type: 'light'
-  },
-  overrides: {
-    MuiIconButton: {
-      backgroundColor: indigo[500]
-    }
-  }
-})
+const theme = createMuiTheme()
 
 export const App = () => {
   return (
