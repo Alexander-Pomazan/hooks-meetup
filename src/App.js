@@ -4,13 +4,22 @@ import Slide01 from './slides/01'
 import {
   CssBaseline,
   createMuiTheme,
-  MuiThemeProvider
+  MuiThemeProvider,
+  Box
 } from '@material-ui/core'
 
 const theme = createMuiTheme()
 
 export const App = () => (
   <MuiThemeProvider theme={theme}>
+    <Box
+      component="img"
+      src="/company-logo.svg"
+      position="absolute"
+      height={48}
+      left={8}
+      top={8}
+    />
     <CssBaseline />
     <Presenter>
       <Slide01 />
