@@ -7,8 +7,7 @@ import Slide03 from './slides/03'
 import {
   CssBaseline,
   createMuiTheme,
-  MuiThemeProvider,
-  Box
+  MuiThemeProvider
 } from '@material-ui/core'
 import { CodeSnippet } from './code-snippet'
 import { Scale } from './utils'
