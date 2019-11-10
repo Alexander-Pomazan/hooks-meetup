@@ -16,7 +16,7 @@ export const UserContacts = ({ phone, email, loading }) => (
   <CardContent>
     <List>
       <Box height={48}>
-        <ListItem>
+        <ListItem title={phone}>
           <ListItemIcon>
             <Phone />
           </ListItemIcon>
@@ -25,9 +25,7 @@ export const UserContacts = ({ phone, email, loading }) => (
               loading ? (
                 <Skeleton variant="rect" />
               ) : (
-                <Typography title={phone} noWrap>
-                  {phone}
-                </Typography>
+                <Typography noWrap>{phone}</Typography>
               )
             }
           />
@@ -35,7 +33,7 @@ export const UserContacts = ({ phone, email, loading }) => (
       </Box>
 
       <Box height={48}>
-        <ListItem>
+        <ListItem title={email}>
           <ListItemIcon>
             <Email />
           </ListItemIcon>

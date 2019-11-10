@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-
 import { UserInfo, UserContacts, Card } from 'src/components'
-
 import { fetchUserProfileData } from 'src/utils'
 
 class UserCard extends Component {
@@ -25,13 +23,11 @@ class UserCard extends Component {
 
   render() {
     const { user, loading } = this.state
-
     const { phone, email, name } = user
 
     return (
       <Card>
         <UserInfo name={name} loading={loading} onRefresh={this.loadUser} />
-
         <UserContacts loading={loading} phone={phone} email={email} />
       </Card>
     )

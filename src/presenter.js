@@ -69,6 +69,15 @@ export const Presenter = ({ children }) => {
         {currentSlideComponent}
       </Box>
 
+      <Box
+        component="img"
+        src="/company-logo.svg"
+        position="absolute"
+        height={36}
+        left={16}
+        top={8}
+      />
+
       {!isFirstSlide(currentSlideNumber) && (
         <Box position="absolute" left={4} bottom={20}>
           <IconButton onClick={switchPrevSlide}>
