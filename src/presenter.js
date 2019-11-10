@@ -59,13 +59,13 @@ export const Presenter = ({ children }) => {
   return (
     <Box
       minHeight="100vh"
-      width="100vw"
       position="relative"
       display="flex"
       alignItems="center"
       justifyContent="center"
+      flexDirection="column"
     >
-      <Box marginTop={6} maxWidth={1200}>
+      <Box paddingY={6} maxWidth="90%">
         {currentSlideComponent}
       </Box>
 
@@ -73,13 +73,13 @@ export const Presenter = ({ children }) => {
         component="img"
         src="/company-logo.svg"
         position="absolute"
-        height={36}
-        left={16}
-        top={8}
+        height={60}
+        left={32}
+        top={16}
       />
 
       {!isFirstSlide(currentSlideNumber) && (
-        <Box position="absolute" left={4} bottom={20}>
+        <Box position="fixed" left={4} bottom={20}>
           <IconButton onClick={switchPrevSlide}>
             <KeyboardArrowLeft />
           </IconButton>
@@ -87,14 +87,14 @@ export const Presenter = ({ children }) => {
       )}
 
       {!isLastSlide(currentSlideNumber, totallySlides) && (
-        <Box position="absolute" right={4} bottom={20}>
+        <Box position="fixed" right={4} bottom={20}>
           <IconButton onClick={switchNextSlide}>
             <KeyboardArrowRight />
           </IconButton>
         </Box>
       )}
 
-      <Box position="absolute" bottom={0} left={0} width="100%">
+      <Box position="fixed" bottom={0} left={0} width="100%">
         <ThiccLinearProgress variant="determinate" value={currentProgress} />
       </Box>
     </Box>
