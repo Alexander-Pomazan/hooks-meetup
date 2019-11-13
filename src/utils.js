@@ -25,3 +25,16 @@ export const Scale = ({ children, scale }) => {
 Scale.defaultProps = {
   scale: 1
 }
+
+const patternImport = new RegExp(
+  /import\s+?(?:(?:(?:[\w*\s{},]*)\s+from\s+?)|)(?:(?:".*?")|(?:'.*?'))[\s]*?(?:;|$|)/
+)
+
+export const removeImportLines = codeSnippet => {
+  const temp = codeSnippet
+    .split('\n')
+    .filter(line => !patternImport.test(line))
+    .join('\n')
+
+  return temp
+}

@@ -10,15 +10,15 @@ export default () => {
   return (
     <Box display="flex" justifyContent="center">
       <Box paddingX={1}>
-        <CodeSnippet code={slide04card} />
+        <CodeSnippet removeImports code={slide04card} />
       </Box>
 
       <Box paddingX={1}>
-        <CodeSnippet code={slide10card} />
+        <CodeSnippet removeImports code={slide10card} />
       </Box>
 
       <Box paddingX={1}>
-        <CodeSnippet code={slide12card} />
+        <CodeSnippet removeImports code={slide12card} />
       </Box>
     </Box>
   )

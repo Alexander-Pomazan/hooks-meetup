@@ -22,7 +22,7 @@ import {
   MuiThemeProvider
 } from '@material-ui/core'
 import { CodeSnippet } from './code-snippet'
-import { Scale } from './utils'
+import { Scale, removeImportLines } from './utils'
 
 import slide01code from '!!raw-loader!./slides/01/user-card.js'
 import slide02code from '!!raw-loader!./slides/02/user-card.js'
@@ -72,15 +72,12 @@ export const App = () => {
         <CodeSnippet code={slide03code} />
 
         {/* / PART 04 */}
-        <CodeSnippet code={slide04codeMarkup} />
-
-        <CodeSnippet code={slide04withUserInfo} />
-
-        <CodeSnippet code={slide04withDocumentTitle} />
-
-        <CodeSnippet code={slide04withWindowWidth} />
-
+        <CodeSnippet removeImports code={slide04codeMarkup} />
+        <CodeSnippet removeImports code={slide04withUserInfo} />
+        <CodeSnippet removeImports code={slide04withDocumentTitle} />
+        <CodeSnippet removeImports code={slide04withWindowWidth} />
         <CodeSnippet code={slide04card} />
+
         <Scale scale={CARD_SCALE}>
           <Slide04 />
         </Scale>
