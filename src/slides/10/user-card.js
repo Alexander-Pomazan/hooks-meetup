@@ -9,9 +9,16 @@ export const UserCard = () => {
     <UserInfo>
       {({ loading, user, refreshUser }) => (
         <WindowWidth>
-          {(windowWidth) => (
+          {windowWidth => (
             <DocumentTitle title={user && user.name}>
-              {() => <UserProfile user={user} loading={loading} refreshUser={refreshUser} windowWidth={windowWidth} />}
+              {() => (
+                <UserProfile
+                  user={user}
+                  loading={loading}
+                  refreshUser={refreshUser}
+                  windowWidth={windowWidth}
+                />
+              )}
             </DocumentTitle>
           )}
         </WindowWidth>

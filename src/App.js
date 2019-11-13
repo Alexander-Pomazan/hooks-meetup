@@ -12,6 +12,9 @@ import Slide08 from './slides/08'
 import Slide09 from './slides/09'
 import Slide10 from './slides/10'
 import Slide11 from './slides/11'
+import Slide12 from './slides/12'
+import Slide115 from './slides/11,5'
+import Slide13 from './slides/13'
 
 import {
   CssBaseline,
@@ -35,6 +38,12 @@ import slide10UserInfo from '!!raw-loader!./slides/10/user-info.js'
 import slide10DocumentTitle from '!!raw-loader!./slides/10/document-title.js'
 import slide10WindowWidth from '!!raw-loader!./slides/10/window-width.js'
 import slide10card from '!!raw-loader!./slides/10/user-card.js'
+
+import slide12codeMarkup from '!!raw-loader!./slides/12/user-profile.js'
+import slide12UserInfo from '!!raw-loader!./slides/12/use-user-info.js'
+import slide12DocumentTitle from '!!raw-loader!./slides/12/use-document-title.js'
+import slide12WindowWidth from '!!raw-loader!./slides/12/use-window-width.js'
+import slide12card from '!!raw-loader!./slides/12/user-card.js'
 const theme = createMuiTheme()
 
 const CARD_SCALE = 1.5
@@ -96,6 +105,18 @@ export const App = () => {
         <Slide10 />
 
         <Slide11 />
+
+        {/* / PART 06 */}
+        <Slide115 />
+        <CodeSnippet code={slide12codeMarkup} />
+        <CodeSnippet code={slide12UserInfo} />
+        <CodeSnippet code={slide12DocumentTitle} />
+        <CodeSnippet code={slide12WindowWidth} />
+        <CodeSnippet code={slide12card} />
+
+        <Slide12 />
+        {/* / PART 07 */}
+        <Slide13 />
       </Presenter>
     </MuiThemeProvider>
   )
