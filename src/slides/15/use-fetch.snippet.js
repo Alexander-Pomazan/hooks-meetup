@@ -7,13 +7,13 @@ export const useFetch = (config) => {
     const { url, skip, take } = config;
     const resource = `${url}?$skip=${skip}&take=${take}`;
     fetch(resource).then(response => setData(response.data));
-  }, [config]); // <-- will fetch on each render
+  }, [config]); // <-- will fetch every time config object changes
 
   return data;
 }
 
 const App = () => {
-  const data = useFetch({ url: "/users", take: 10, skip: 0 })
+  const data = useFetch({ url: "/users", take: 10, skip: 0 }) // new config object on every render!
 
   if (!data) return null
 

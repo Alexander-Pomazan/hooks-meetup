@@ -19,6 +19,12 @@ export const Presenter = ({ children }) => {
     initialSlideNumber
   )
 
+  useEffect(
+    () =>
+      console.log(`[Presenter] current slide number: ${currentSlideNumber}`),
+    [currentSlideNumber]
+  )
+
   const totallySlides = React.Children.count(children)
   const currentSlideComponent = useMemo(
     () => React.Children.toArray(children)[currentSlideNumber - 1],
