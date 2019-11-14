@@ -15,6 +15,10 @@ import Slide11 from './slides/11'
 import Slide12 from './slides/12'
 import Slide115 from './slides/11,5'
 import Slide13 from './slides/13'
+import Slide14 from './slides/14'
+import Slide15 from './slides/15'
+import Slide16 from './slides/16'
+import Slide17 from './slides/17'
 
 import {
   CssBaseline,
@@ -22,7 +26,7 @@ import {
   MuiThemeProvider
 } from '@material-ui/core'
 import { CodeSnippet } from './code-snippet'
-import { Scale, removeImportLines } from './utils'
+import { Scale } from './utils'
 
 import slide01code from '!!raw-loader!./slides/01/user-card.js'
 import slide02code from '!!raw-loader!./slides/02/user-card.js'
@@ -57,19 +61,19 @@ export const App = () => {
         <Scale scale={CARD_SCALE}>
           <Slide01 />
         </Scale>
-        <CodeSnippet code={slide01code} />
+        <CodeSnippet removeImports code={slide01code} />
 
         {/* / PART 02 */}
         <Scale scale={CARD_SCALE}>
           <Slide02 />
         </Scale>
-        <CodeSnippet code={slide02code} />
+        <CodeSnippet removeImports code={slide02code} />
 
         {/* / PART 03 */}
         <Scale scale={CARD_SCALE}>
           <Slide03 />
         </Scale>
-        <CodeSnippet code={slide03code} />
+        <CodeSnippet removeImports code={slide03code} />
 
         {/* / PART 04 */}
         <CodeSnippet removeImports code={slide04codeMarkup} />
@@ -114,6 +118,14 @@ export const App = () => {
         <Slide12 />
         {/* / PART 07 */}
         <Slide13 />
+
+        <Slide14 />
+
+        <Slide15 />
+
+        <Slide16 />
+
+        <Slide17 />
       </Presenter>
     </MuiThemeProvider>
   )
