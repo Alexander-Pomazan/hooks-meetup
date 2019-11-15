@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.js": "/hooks-meetup/static/js/main.6a4538be.chunk.js",
+    "main.js.map": "/hooks-meetup/static/js/main.6a4538be.chunk.js.map",
+    "runtime-main.js": "/hooks-meetup/static/js/runtime-main.6b0bcd34.js",
+    "runtime-main.js.map": "/hooks-meetup/static/js/runtime-main.6b0bcd34.js.map",
+    "static/css/2.5cbd1a7f.chunk.css": "/hooks-meetup/static/css/2.5cbd1a7f.chunk.css",
+    "static/js/2.5553acbe.chunk.js": "/hooks-meetup/static/js/2.5553acbe.chunk.js",
+    "static/js/2.5553acbe.chunk.js.map": "/hooks-meetup/static/js/2.5553acbe.chunk.js.map",
+    "index.html": "/hooks-meetup/index.html",
+    "precache-manifest.5f1c7467afe19a33c8d225c327e05b52.js": "/hooks-meetup/precache-manifest.5f1c7467afe19a33c8d225c327e05b52.js",
+    "service-worker.js": "/hooks-meetup/service-worker.js",
+    "static/css/2.5cbd1a7f.chunk.css.map": "/hooks-meetup/static/css/2.5cbd1a7f.chunk.css.map",
+    "static/media/background.jpg": "/hooks-meetup/static/media/background.c914bc05.jpg",
+    "static/media/obligatory-cat-meme.jpg": "/hooks-meetup/static/media/obligatory-cat-meme.072e5bd0.jpg",
+    "static/media/index.css": "/hooks-meetup/static/media/roboto-latin-900italic.ebf6d164.woff2",
+    "static/media/wrapper-hell.png": "/hooks-meetup/static/media/wrapper-hell.2648f93b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6b0bcd34.js",
+    "static/css/2.5cbd1a7f.chunk.css",
+    "static/js/2.5553acbe.chunk.js",
+    "static/js/main.6a4538be.chunk.js"
+  ]
+}
