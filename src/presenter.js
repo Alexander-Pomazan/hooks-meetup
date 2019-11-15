@@ -77,7 +77,7 @@ export const Presenter = ({ children }) => {
 
       <Box
         component="img"
-        src="/company-logo.svg"
+        src="company-logo.svg"
         position="fixed"
         height={60}
         left={32}
