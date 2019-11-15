@@ -2,12 +2,14 @@
   "name": "hooks-meetup",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://Alexander-Pomazan.github.io/hooks-meetup",
   "dependencies": {
     "@material-ui/core": "^4.6.0",
     "@material-ui/icons": "^4.5.1",
     "@material-ui/lab": "^4.0.0-alpha.31",
     "@material-ui/styles": "^4.6.0",
     "compose-function": "^3.0.3",
+    "gh-pages": "^2.1.1",
     "qs": "^6.9.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
@@ -18,6 +20,8 @@
     "typeface-roboto": "0.0.75"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
